@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .input {
+    @apply rounded-full px-3 py-2 outline-none placeholder:text-stone-400 focus:ring focus:ring-yellow-300 focus:ring-offset-2 md:px-6 md:py-3;
+  }
+
+  .bars-8 {
+    transform: translate(-50%, -50%);
+    width: 45px;
+    aspect-ratio: 0.75;
+    --c: no-repeat linear-gradient(theme(colors.stone.800) 0 0);
+    background:
+      var(--c) 0% 100%,
+      var(--c) 50% 100%,
+      var(--c) 100% 100%;
+    background-size: 20% 65%;
+    animation: b8 1s infinite linear;
+  }
+  @keyframes b8 {
+    16.67% {
+      background-position:
+        0% 0%,
+        50% 100%,
+        100% 100%;
+    }
+    33.33% {
+      background-position:
+        0% 0%,
+        50% 0%,
+        100% 100%;
+    }
+    50% {
+      background-position:
+        0% 0%,
+        50% 0%,
+        100% 0%;
+    }
+    66.67% {
+      background-position:
+        0% 100%,
+        50% 0%,
+        100% 0%;
+    }
+    83.33% {
+      background-position:
+        0% 100%,
+        50% 100%,
+        100% 0%;
+    }
+  }
+
+  /* https://dev.to/afif/i-made-100-css-loaders-for-your-next-project-4eje */
+}
