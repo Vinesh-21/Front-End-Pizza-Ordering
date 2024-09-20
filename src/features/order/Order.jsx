@@ -9,6 +9,8 @@ import {
   formatCurrency,
   formatDate,
 } from "../../utils/helpers";
+import { useDispatch } from "react-redux";
+import { clearCart } from "../cart/cartSlice";
 
 function Order() {
   const order = useLoaderData();
